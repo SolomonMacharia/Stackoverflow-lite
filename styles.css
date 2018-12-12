@@ -45,6 +45,15 @@ button:hover {
 .description a {
     color: rgb(227, 227, 240);
 }
+.loginform h2 {
+  text-align: center;
+}
+.psw {
+  text-align: center;
+}
+.psw a {
+  color: white;
+}
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
