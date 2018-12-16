@@ -62,3 +62,25 @@ def single_questions(questionId):
     if question == 0:
         abort(404,"Error question {} doesn't exist".format(questionId))
     return jsonify(question)
+
+@app.route('/questions', methods=['POST'])
+def post_question():
+    title = request.json['title']
+    description = request.json['description']
+    if not request.json or not 'title' in request.json:
+        abort(400, "Error: Invalid titile format!!")
+    elif not title.strip(' '):
+        abort(400, "Error :Title cannot be empty!!")
+    elif not request.json or not 'description' in request.json:
+        abort(400, "Error: Invalid description format!!")
+    elif not description.strip(' '):
+        abort(400, "Description cannot be empty!!")
+    else:
+        new_question = {
+            'id': all_questions[-1]['id'] + 1,
+            'title': title,
+            'description': description
+        }
+        all_questions.append(new_question)
+        return jsonify({'question': new_question}), 201
+    
