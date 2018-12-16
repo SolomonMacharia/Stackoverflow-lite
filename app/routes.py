@@ -5,6 +5,27 @@ import re
 
 users = []
 
+all_questions = [
+    {
+        'id': 1,
+        'title': 'The question',
+        'description': 'This is the question',
+        'answers': {
+            'answerid': 1,
+            'answer': 'This is the answer.'
+        }
+    },
+    {
+        'id': 2,
+        'title': 'The question',
+        'description': 'This is the question',
+        'answers': {
+            'answerid': 1,
+            'answer': 'This is the answer.'
+        }
+    }
+]
+
 @app.route('/auth/signup', methods=['POST'])
 def signup():
     username = request.json['username']
@@ -28,3 +49,8 @@ def signup():
         users.append(new_user)
     return jsonify({'Created': new_user})
     
+
+@app.route('/questions', methods=['GET'])
+def questions():
+    """ Returns all questions """
+    return jsonify(all_questions)
