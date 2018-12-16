@@ -54,3 +54,11 @@ def signup():
 def questions():
     """ Returns all questions """
     return jsonify(all_questions)
+
+@app.route('/questions/<int:questionId>', methods=['GET'])
+def single_questions(questionId):
+    """ Returns a single question with all the answers privided """
+    question = [question for question in all_questions if question['id'] == questionId]
+    if question == 0:
+        abort(404,"Error question {} doesn't exist".format(questionId))
+    return jsonify(question)
