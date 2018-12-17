@@ -84,3 +84,10 @@ def post_question():
         all_questions.append(new_question)
         return jsonify({'question': new_question}), 201
     
+@app.route('/questions/<int:questionId>', methods=['DELETE'])
+def delete_question(questionId):
+    question = [question for question in all_questions if question['id'] == questionId]
+    if len(question) == 0:
+        abort(404, "Error: Question {} doesn't exist!!".format(questionId))
+    all_questions.remove(question[0])
+    return jsonify('Question {} deleted!'.format(questionId))
