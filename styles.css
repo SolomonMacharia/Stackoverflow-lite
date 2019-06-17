@@ -1,0 +1,175 @@
+body {
+    font-family:sans-serif;
+    background-color: blue;
+}
+.signin, .login form {
+    /* border: 3px solid #f1f1f1; */
+    background: rgb(66, 66, 226);
+}
+.signin h2 {
+    text-align: center;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: rgb(85, 85, 206);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.container {
+  padding: 16px;
+}
+.signin a {
+  color: #ddd;
+}
+.description p {
+    text-align: center;
+}
+.description a {
+    color: rgb(227, 227, 240);
+}
+.loginform h2 {
+  text-align: center;
+}
+.psw {
+  text-align: center;
+}
+.psw a {
+  color: white;
+}
+.header {
+  overflow: hidden;
+}
+.header a {
+  float: left;
+  color: #ddd;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+.header-right {
+  float: right;
+}
+.navbar {
+  overflow: hidden;
+}
+.navbar a {
+  float: left;
+  background: lightblue;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+.navbar a:hover {
+  background-color: #ddd;
+}
+.navbar a:active {
+  background-color: rgb(63, 60, 218);
+}
+#search input[type=text] {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  border: none;
+  font-size: 18px;
+  width: 20%;
+}
+.allquestions h2 {
+  text-align: center;
+}
+.question {
+  display: flex;
+  flex-wrap: wrap;
+}
+.question p {
+  flex: 2;
+}
+.time {
+  justify-content: baseline;
+  align-content: flex-end;
+
+}
+.questionactions {
+  background: #ddd;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.pagination {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.pagination a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none
+}
+.pagination a:active {
+  background-color: lightblue;
+  color: white;
+  border-radius: 5px; 
+}
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+.footer {
+  position: bottom;
+  padding: 10px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .header, .header-right, .navbar a, #search input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  #search input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+}
